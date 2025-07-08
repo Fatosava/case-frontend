@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+console.log(products)
 
 function App() {
   const [products, setProducts] = useState([]);
-
+ 
   useEffect(() => {
     axios
       .get("https://renart-case-study-0ce0.onrender.com/products")
