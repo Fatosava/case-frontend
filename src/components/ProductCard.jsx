@@ -19,12 +19,17 @@ export default function ProductCard({ product }) {
 
       {/* ⭐ puan + yıldız */}
       <p className="stars">
-        {rating} / 5&nbsp;
-        {Array.from({ length: 5 }, (_, i) => {
-          if (i < full)            return <span key={i}>★</span>;     // dolu
-          if (i === full && half)  return <span key={i}>☆</span>;     // yarım yerine boş bırak
-          return <span key={i}>☆</span>;                              // boş
-        })}
+       const rating = (product.popularityScore / 20).toFixed(1);
+const fullStars = Math.round(rating);  // en yakın tam yıldıza yuvarla
+
+return (
+  /* …img, isim, fiyat… */
+  <p className="stars">
+    {rating} / 5&nbsp;
+    {"★".repeat(fullStars)}
+    {"☆".repeat(5 - fullStars)}
+  </p>
+);
       </p>
     </div>
   );
