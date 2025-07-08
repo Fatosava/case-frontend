@@ -12,5 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.carousel { padding-bottom: 2rem; }
+.swiper-button-next,
+.swiper-button-prev { color:#d18f00; }
+.swiper-pagination-bullet-active { background:#d18f00; }
 
 
